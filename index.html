@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead class="head">
+            <tr>
+                <th>Day</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Break Duration</th>
+                <th>Total Hours</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monday</td>
+                <td>
+                    <input type="time" value="09:00" step="900" name="start-time">
+                    <select name="start-am-pm">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="time" value="05:00" step="900" name="end-time">
+                    <select name="end-am-pm">
+                        <option value="AM">AM</option>
+                        <option value="PM" selected>PM</option>
+                    </select>
+                </td>
+                <td><input type="number" value="1" name="break-duration"></td>
+                <td><input type="number" disabled name="total-hours"></td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>
+                    <input type="time" value="09:00" step="900" name="start-time">
+                    <select name="start-am-pm">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="time" value="05:00" step="900" name="end-time">
+                    <select name="end-am-pm">
+                        <option value="AM">AM</option>
+                        <option value="PM" selected>PM</option>
+                    </select>
+                </td>
+                <td><input type="number" value="1" name="break-duration"></td>
+                <td><input type="number" disabled name="total-hours"></td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>
+                    <input type="time" value="09:00" step="900" name="start-time">
+                    <select name="start-am-pm">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="time" value="05:00" step="900" name="end-time">
+                    <select name="end-am-pm">
+                        <option value="AM">AM</option>
+                        <option value="PM" selected>PM</option>
+                    </select>
+                </td>
+                <td><input type="number" value="1" name="break-duration"></td>
+                <td><input type="number" disabled name="total-hours"></td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>
+                    <input type="time" value="09:00" step="900" name="start-time">
+                    <select name="start-am-pm">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="time" value="05:00" step="900" name="end-time">
+                    <select name="end-am-pm">
+                        <option value="AM">AM</option>
+                        <option value="PM" selected>PM</option>
+                    </select>
+                </td>
+                <td><input type="number" value="1" name="break-duration"></td>
+                <td><input type="number" disabled name="total-hours"></td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>
+                    <input type="time" value="09:00" step="900" name="start-time">
+                    <select name="start-am-pm">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="time" value="05:00" step="900" name="end-time">
+                    <select name="end-am-pm">
+                        <option value="AM">AM</option>
+                        <option value="PM" selected>PM</option>
+                    </select>
+                </td>
+                <td><input type="number" value="1" name="break-duration"></td>
+                <td><input type="number" disabled name="total-hours"></td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>
+                    <input type="time" value="09:00" step="900" name="start-time">
+                    <select name="start-am-pm">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="time" value="05:00" step="900" name="end-time">
+                    <select name="end-am-pm">
+                        <option value="AM">AM</option>
+                        <option value="PM" selected>PM</option>
+                    </select>
+                </td>
+                <td><input type="number" value="1" name="break-duration"></td>
+                <td><input type="number" disabled name="total-hours"></td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>
+                    <input type="time" value="09:00" step="900" name="start-time">
+                    <select name="start-am-pm">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="time" value="05:00" step="900" name="end-time">
+                    <select name="end-am-pm">
+                        <option value="AM">AM</option>
+                        <option value="PM" selected>PM</option>
+                    </select>
+                </td>
+                <td><input type="number" value="1" name="break-duration"></td>
+                <td><input type="number" disabled name="total-hours"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" rowspan="4" align="right">Total Hours:</td>
+                <td><input type="number" disabled name="total-hours"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <button id="calculate-btn">Calculate</button>
+    
+
+    <script>
+        const tableRows = document.querySelectorAll('tbody tr');
+
+        function calculateTotalHours() {
+            let totalHours = 0;
+            for (let i = 0; i < tableRows.length; i++) {
+                const row = tableRows[i];
+                const startTimeInput = row.querySelector('input[type="time"][name="start-time"]');
+                const startAmPmSelect = row.querySelector('select[name="start-am-pm"]');
+                const endTimeInput = row.querySelector('input[type="time"][name="end-time"]');
+                const endAmPmSelect = row.querySelector('select[name="end-am-pm"]');
+                const breakDurationInput = row.querySelector('input[type="number"][name="break-duration"]');
+                const totalHoursInput = row.querySelector('input[type="number"][name="total-hours"]');
+
+                const startAmPm = startAmPmSelect.value;
+                const endAmPm = endAmPmSelect.value;
+                const startHours = parseInt(startTimeInput.value.split(':')[0]);
+                const endHours = parseInt(endTimeInput.value.split(':')[0]) + (endAmPm === 'PM' ? 12 : 0);
+                const startMinutes = parseInt(startTimeInput.value.split(':')[1]);
+                const endMinutes = parseInt(endTimeInput.value.split(':')[1]);
+                const breakDuration = parseFloat(breakDurationInput.value);
+
+                const hours = endHours - startHours - (startAmPm === 'PM' ? 12 : 0) - breakDuration + (endMinutes - startMinutes) / 60;
+                totalHours += hours;
+
+                totalHoursInput.value = hours.toFixed(2);
+            }
+
+            const totalHoursInputs = document.querySelectorAll('tfoot input[name="total-hours"]');
+            totalHoursInputs.forEach(input => input.value = totalHours.toFixed(2));
+        }
+
+        const calculateButton = document.querySelector('#calculate-btn');
+        calculateButton.addEventListener('click', calculateTotalHours);
+    </script>
+
+</body>
+
+</html>
